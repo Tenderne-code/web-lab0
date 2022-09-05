@@ -73,7 +73,7 @@ Github 是一个在线软件软代码托管服务平台，使用 git 作为版�
 
 为了在本地仓库和远程仓库间进行传输的安全性，需要进行验证。我们推荐你使用 ssh 进行加密传输，为此你需要在 github 上添加你的 ssh 公钥。
 
-如果你对 ssh 的工作方式感兴趣，可以自行 google/baidu
+如果你对 ssh 的工作方式感兴趣，可以自行 google
 
 #### 生成 SSH Key
 
@@ -119,6 +119,38 @@ $ git clone git@github.com:N2Sys-EDU/lab0-introduction-xxx.git
 
 ### push
 
-
+你可以通过 `git push` 命令将本地仓库推送到远端。注意，只有已提交的更改才会被推送。即，假设你修改了 lab0 仓库中的 hellonetwowrk.cpp 文件，那么你可以通过以下指令更新远程仓库
+``` shell
+$ git add hellonetwork.cpp
+$ git commit -m "hellonetwork"
+$ git push
+```
+或者简单的使用
+``` shell
+$ git commit -am "hellonetwork"
+$ git push
+```
 
 ### pull
+
+你可以通过 `git pull` 命令将远端仓库的更新拉取到本地。这主要用于合作开发或者使用多台设备进行开发。
+``` shell
+$ git pull
+```
+
+到这里为止，你已经学会了本 lab 需要用到的所有内容，之后的内容我们只做一个简单的介绍，如有需求，可以自行 google
+
+### branch
+
+你可以通过 `git branch` 命令来基于当前版本创建一个新的分支，不同的分支创建后互相独立。之后，你可以通过 `git checkout` 命令来切换分支。举例来说，
+``` shell
+$ git branch new-branch
+$ git checkout new-branch
+```
+对分支 new-branch 的修改不会影响到原分支，同样的，对原分支的修改将不再影响 new-branch 你可以再次执行 `git checkout main` 回到原分支， `main` 是 github 的默认分支。
+
+另外，你可以通过 `git merge` 命令合并两个分支。
+
+### reset
+
+`reset` 命令用于版本回滚，即回退到提交过的某一版本，具体用法大家可以自行 google
