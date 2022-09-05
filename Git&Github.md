@@ -8,7 +8,7 @@ Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个�
 我们强烈推荐你使用 git 管理你的项目。
 ### 安装 Git
 在 linux 下，你只需要执行
-``` shell
+``` bash
 apt-get install git
 ```
 在 windows 和 mac 下， git 提供了图形化安装方式。
@@ -21,34 +21,34 @@ apt-get install git
 
 在任意位置新建文件夹 `mkdir lab0` ，在该目录下执行 `git init` 会在该位置创建本地 git 仓库
 
-``` shell
+``` bash
 $ mkdir lab0
 $ cd lab0
 $ git init
 ```
 
 除了新建一个仓库，你也可以使用 `git clone` 命令拷贝一个现有仓库，我们以 Lab0 的模板仓库为例，在任意位置执行以下指令
-``` shell
+``` bash
 $ git clone https://github.com/N2Sys-EDU/Lab0-Introduction-To-Classroom.git
 ```
 这条指令将位于 `https://github.com/N2Sys-EDU/Lab0-Introduction-To-Classroom.git` 的远程仓库克隆到本地，你将会在当前目录下发现目录 `Lab0-Introduction-To-Classroom/`
 
 #### 提交与修改
 当你在项目中做了一些修改后，比如创建一个新文件 `touch README.md` ，你可以使用 `git add` 命令来将你的修改添加到暂存区，例如 `git add README.md` ，你也可以使用 `git add .` 来将所有修改添加到暂存区。
-``` shell
+``` bash
 $ touch README.md
 $ git add README.md
 ```
 
 在确认了你的改动之后，你可以将文件提交到仓库中，但在此之前，你需要先设置你的用户信息
-``` shell
+``` bash
 git config --global user.name "labman008"
 git config --global user.email "labman008@pku.edu.cn"
 ```
 `--global` 用于指明作用域为全局，相应的你也可以使用 `--local` 来使得配置仅在当前仓库生效。
 
 之后，你可以使用 `git commit` 指令将暂存区的文件提交到本地仓库中，这将会在仓库中创建一个快照，或者说项目的一个版本，你可以利用 git 在不同版本之间快捷的切换，换言之你不用再担心因为反复修改而失去了第一份能运行的代码了。
-``` shell
+``` bash
 $ git commit -m "first commit"
 ```
 `git commit -m [message]` 用于为你的提交添加一些说明。另外，你也可以使用 `git commit -a` 来跳过 `git add`
@@ -78,7 +78,7 @@ Github 是一个在线软件软代码托管服务平台，使用 git 作为版�
 #### 生成 SSH Key
 
 在本地使用 `ssh-keygen` 命令生成密钥。简单起见，这里我们使用 `ssh-keygen` 的默认生成方式，你可以查询该指令的参数来修改生成方式。
-``` shell
+``` bash
 $ ssh-keygen
 ```
 你可以简单的键入三次回车来生成密钥，生成的密钥在 `~/.ssh/` 目录下。
@@ -90,7 +90,7 @@ $ ssh-keygen
 复制本地 `~/.ssh/id_rsa.pub` 中的 key 粘贴进 `Key` 中，在 `Title` 一栏你可以为该密钥命名。
 
 在 linux 上你可以使用 
-``` shell
+``` bash
 $ cat ~/.ssh/id_rsa.pub
 ``` 
 获取生成的公钥。
@@ -98,7 +98,7 @@ $ cat ~/.ssh/id_rsa.pub
 输入完后，点击 `Add SSH key` 完成添加。
 
 你可以在本地执行 
-``` shell
+``` bash
 $ ssh -T git@github.com
 ```
 来测试是否添加成功。
@@ -108,7 +108,7 @@ $ ssh -T git@github.com
 打开你想要 clone 的远程仓库，比如 classroom 自动新建的你的 lab0 仓库，点击绿色的 `Code` 按钮，选择 `SSH` ，复制下方的链接。
 
 在本地执行
-``` shell
+``` bash
 $ git clone git@github.com:N2Sys-EDU/lab0-introduction-xxx.git
 ```
 将 clone 后的链接换成刚刚复制的链接，如果之前的配置正确，你将在本地看到 clone 下来的本地仓库。
@@ -120,13 +120,13 @@ $ git clone git@github.com:N2Sys-EDU/lab0-introduction-xxx.git
 ### push
 
 你可以通过 `git push` 命令将本地仓库推送到远端。注意，只有已提交的更改才会被推送。即，假设你修改了 lab0 仓库中的 hellonetwowrk.cpp 文件，那么你可以通过以下指令更新远程仓库
-``` shell
+``` bash
 $ git add hellonetwork.cpp
 $ git commit -m "hellonetwork"
 $ git push
 ```
 或者简单的使用
-``` shell
+``` bash
 $ git commit -am "hellonetwork"
 $ git push
 ```
@@ -134,7 +134,7 @@ $ git push
 ### pull
 
 你可以通过 `git pull` 命令将远端仓库的更新拉取到本地。这主要用于合作开发或者使用多台设备进行开发。
-``` shell
+``` bash
 $ git pull
 ```
 
@@ -143,7 +143,7 @@ $ git pull
 ### branch
 
 你可以通过 `git branch` 命令来基于当前版本创建一个新的分支，不同的分支创建后互相独立。之后，你可以通过 `git checkout` 命令来切换分支。举例来说，
-``` shell
+``` bash
 $ git branch new-branch
 $ git checkout new-branch
 ```
