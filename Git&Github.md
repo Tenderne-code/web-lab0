@@ -6,6 +6,12 @@ Git 是一个开源的分布式版本控制系统，常用于便捷高效地处�
 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
 
 我们强烈推荐你使用 git 管理你的项目。
+### 安装 Git
+在 linux 下，你只需要执行
+``` shell
+apt-get install git
+```
+在 windows 和 mac 下， git 提供了图形化安装方式。
 
 ### Git 基本操作
 
@@ -47,8 +53,72 @@ $ git commit -m "first commit"
 ```
 `git commit -m [message]` 用于为你的提交添加一些说明。另外，你也可以使用 `git commit -a` 来跳过 `git add`
 
-现在，你已经掌握了使用 git 管理本地仓库的基本方法。
-
 ## Github
 
+现在，你已经掌握了使用 git 管理本地仓库的基本方法。如果你想通过 git 分享你的代码或者与其他人合作开发，就需要将数据放到一台其他开发人员能够连接的服务器上。
+
+Github 是一个在线软件软代码托管服务平台，使用 git 作为版本控制软件。截至 2022 年 6 月， github 已有超过 5700 万注册用户和 1.9 亿代码库（包括至少 2800 万开源代码库），是世界上最大的代码托管网站和开源社区。
+
+在本次 Lab 中，我们使用 github 作为 git 远程仓库，并借助 github 的 classroom 功能进行测试。
+
+### 创建账号
+
+打开 [github官网](https://github.com/) ，点击右上角 `sign up` ，跟随指引创建你的 github 账号。
+
+### 创建仓库
+
+登入后点击左侧 New 或右上角加号 - `New repository` 新建一个仓库，键入仓库名和其他你觉得需要的信息后点击 `Create repository` 即可完成创建。当然，在本次 lab 中，你只需要使用 classroom 自动创建的仓库而不需要自己新建仓库。
+
+### 配置 ssh key
+
+为了在本地仓库和远程仓库间进行传输的安全性，需要进行验证。我们推荐你使用 ssh 进行加密传输，为此你需要在 github 上添加你的 ssh 公钥。
+
+如果你对 ssh 的工作方式感兴趣，可以自行 google/baidu
+
+#### 生成 SSH Key
+
+在本地使用 `ssh-keygen` 命令生成密钥。简单起见，这里我们使用 `ssh-keygen` 的默认生成方式，你可以查询该指令的参数来修改生成方式。
+``` shell
+$ ssh-keygen
+```
+你可以简单的键入三次回车来生成密钥，生成的密钥在 `~/.ssh/` 目录下。
+
+#### 添加 SSH Key
+
+回到 github ，点击右上角头像 - `Settings` ，然后点击左侧 `SSH and GPG keys` 进入 ssh key 配置界面。点击 `New SSH key` 添加新的密钥。
+
+复制本地 `~/.ssh/id_rsa.pub` 中的 key 粘贴进 `Key` 中，在 `Title` 一栏你可以为该密钥命名。
+
+在 linux 上你可以使用 
+``` shell
+$ cat ~/.ssh/id_rsa.pub
+``` 
+获取生成的公钥。
+
+输入完后，点击 `Add SSH key` 完成添加。
+
+你可以在本地执行 
+``` shell
+$ ssh -T git@github.com
+```
+来测试是否添加成功。
+
+### 克隆仓库到本地
+
+打开你想要 clone 的远程仓库，比如 classroom 自动新建的你的 lab0 仓库，点击绿色的 `Code` 按钮，选择 `SSH` ，复制下方的链接。
+
+在本地执行
+``` shell
+$ git clone git@github.com:N2Sys-EDU/lab0-introduction-xxx.git
+```
+将 clone 后的链接换成刚刚复制的链接，如果之前的配置正确，你将在本地看到 clone 下来的本地仓库。
+
 ## More git
+
+现在，你已经可以在 clone 下来的本地仓库中完成 Lab 了。最后，我们需要在本地仓库和远程仓库间进行同步。
+
+### push
+
+
+
+### pull
