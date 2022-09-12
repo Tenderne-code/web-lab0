@@ -46,9 +46,9 @@ int main(int argc, char **argv) {
 
 ```
 - include
---- main.hpp
+--- hello.hpp
 - src
---- hello.cpp
+--- main.cpp
 - CMakeLists.txt
 ```
 
