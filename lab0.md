@@ -1,5 +1,7 @@
 # Lab0
 
+> 请从[北大教学网](https://course.pku.edu.cn)获取接受本Lab任务的链接 
+
 设计本Lab的主要目的是为了让同学们能够更加快速的上手Github Classroom
 
 在本Lab中你要做的事情非常简单,我们将在下面的内容中介绍
