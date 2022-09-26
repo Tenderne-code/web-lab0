@@ -34,7 +34,7 @@ TA的系统: Ubuntu 18.04
 
 1. `mkdir -p build`
 2. `cd build`
-3. `cmake .. -G “Unix Makefiles”` 如果您正确安装了 Ninja可以使用 `cmake .. -G Ninja`
+3. `cmake .. -G "Unix Makefiles"` 如果您正确安装了 Ninja可以使用 `cmake .. -G Ninja`
 
 如此我们完成了编译的准备工作
 
