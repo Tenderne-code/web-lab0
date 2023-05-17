@@ -1,0 +1,3 @@
+/home/m/web-labs/lab0-introduction-Tenderne-code/build/CMakeFiles/rebuild_cache.dir
+/home/m/web-labs/lab0-introduction-Tenderne-code/build/CMakeFiles/edit_cache.dir
+/home/m/web-labs/lab0-introduction-Tenderne-code/build/CMakeFiles/hellonetwork.dir
